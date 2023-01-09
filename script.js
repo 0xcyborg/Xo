@@ -11,17 +11,18 @@ function Main(Element){
     if(Element.src.includes("default") && Play){
         if(Turn == 0){ 
             Element.src = "files/0.png"; 
-            Turn = 1 
+            Turn = 1;
+            document.getElementById("text").innerHTML = "Player 'O' Turn";
         }
         else{ 
             Element.src = "files/1.png";
-            Turn = 0 
+            Turn = 0;
+            document.getElementById("text").innerHTML = "Player 'X' Turn";
         }
         Sound = new Audio('files/click.mp3');
         Sound.play();
         
         Count += 1;
-        
         Check_Winner();
     }
 }
@@ -39,13 +40,13 @@ function Check_Winner(){
     }
     
     if(Count == 9 && Play == true){ 
-        document.getElementById("result").innerHTML = "Tie"; 
+        document.getElementById("text").innerHTML = "Tie"; 
         Game_Over(0); // 0 = There Is No Winner
     }
 }
 
 function After_Win(Src){
-    Src.includes("0.png") ? document.getElementById("result").innerHTML = "Player 'X' Win" : document.getElementById("result").innerHTML = "Player 'O' Win";
+    Src.includes("0.png") ? document.getElementById("text").innerHTML = "Player 'X' Win" : document.getElementById("text").innerHTML = "Player 'O' Win";
     Play = false;
     Game_Over(1); // 1 = There Is A Winner
 }
