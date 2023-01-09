@@ -48,7 +48,7 @@ async function After_Win(Src){
     Sound.play();
     Show_Button();
     Play = false;
-    Src.includes("0.png") ? document.getElementById("result").innerHTML = "Player 1 Win" : document.getElementById("result").innerHTML = "Player 2 Win";
+    Src.includes("0.png") ? document.getElementById("result").innerHTML = "Player X Win" : document.getElementById("result").innerHTML = "Player O Win";
     for(Num = 0; Num < 256; Num++){
         document.body.style.background = (`rgb(${Num},${Num},${Num + 50})`);
         await new Promise(r => setTimeout(r, 100));
