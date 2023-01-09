@@ -12,6 +12,8 @@ function Main(Element){
         if(Turn == 0){ Element.src = "files/0.png"; Turn = 1 }
         else{ Element.src = "files/1.png"; Turn = 0 }
         Count += 1;
+        Sound = new Audio('files/sound_2.mp3');
+        Sound.play();
         Check_Winner();
     }
 }
