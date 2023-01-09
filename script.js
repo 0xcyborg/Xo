@@ -1,4 +1,4 @@
-// 2023,01,08
+// 2023-01-08
 
 document.getElementById("content").style.display = "inline-block";
 
@@ -38,22 +38,21 @@ function Check_Winner(){
             else if(!Src.includes("default") && J == 2) After_Win(Src);
         }
     }
-    
     if(Count == 9 && Play == true){ 
         document.getElementById("text").innerHTML = "Tie"; 
-        Game_Over(0); // 0 = There Is No Winner
+        Game_Over(0);
     }
 }
 
 function After_Win(Src){
     Src.includes("0.png") ? document.getElementById("text").innerHTML = "Player 'X' Win" : document.getElementById("text").innerHTML = "Player 'O' Win";
     Play = false;
-    Game_Over(1); // 1 = There Is A Winner
+    Game_Over(1);
 }
 
 async function Game_Over(Variable){
-    if(Variable == 0) Name = "tie.mp3"
-    else Name = "win.mp3"
+    if(Variable == 0) Name = "tie.mp3";
+    else Name = "win.mp3";
     
     Sound = new Audio("files/" + Name);
     Sound.play();
