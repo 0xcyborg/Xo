@@ -1,17 +1,23 @@
 body{
-    background-color: #484f4d;
+    background-color: rgb(150, 150, 150);
 }
 
 #content{
-    background: blanchedalmond;
+    background: rgb(255, 235, 205);
+    
     display: none;
    
-    border: 2px black solid;
-    padding: 4px;
+    border: 3px rgb(63, 72, 204) solid;
+    
+    padding: 8px;
+}
+
+#content div img{
+    margin: 5px;
 }
 
 img{
-    border: 1px black solid;
+    border-radius: 25px;
 }
 
 #refresh{

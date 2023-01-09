@@ -59,8 +59,8 @@ async function Game_Over(Variable){
     
     document.getElementById("refresh").style.display = "block";
     
-    for(Num = 0; Num < 256; Num++){
-        document.body.style.background = (`rgb(${Num},${Num},${Num + 50})`);
+    for(Num = 150; Num > 0; Num--){
+        document.body.style.background = (`rgb(${Num},${Num},${Num})`);
         await new Promise(r => setTimeout(r, 100));
     }
 }
