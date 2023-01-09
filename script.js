@@ -1,9 +1,10 @@
 // 2023 01 08
 
+document.getElementById("content").style.display = "inline-block";
+
 Turn = 0;
 Play = true;
-document.getElementById("content").style.display = "inline-block";
-Cases = [[1,4,7],[2,5,8],[3,6,9],[1,2,3],[4,5,6],[7,8,9],[1,5,9],[3,5,7]];
+Cases = [ [1,4,7],[2,5,8],[3,6,9],[1,2,3],[4,5,6],[7,8,9],[1,5,9],[3,5,7] ];
 
 function Main(Element){
     if(Element.src.includes("default") && Play){
@@ -33,8 +34,9 @@ function Win(){
 }
 
 async function After_Win(Src){
+    Sound = new Audio('files/sound.mp3');
+    Sound.play();
     Play = false;
-    new Audio('files/sound.mp3').play();
     Src.includes("0.png") ? document.getElementById("result").innerHTML = "Player 1 Win" : document.getElementById("result").innerHTML = "Player 2 Win";
     for(Num = 0; Num < 256; Num++){
         document.body.style.background = (`rgb(${Num},${Num},${Num + 50})`);
