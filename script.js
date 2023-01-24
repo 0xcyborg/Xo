@@ -5,6 +5,7 @@ document.getElementById("content").style.display = "inline-block";
 Turn = 0;
 Count = 0;
 Play = true;
+Text = document.getElementById("text");
 Cases = [ [1,4,7],[2,5,8],[3,6,9],[1,2,3],[4,5,6],[7,8,9],[1,5,9],[3,5,7] ];
 
 function Main(Element){
@@ -12,12 +13,12 @@ function Main(Element){
         if(Turn == 0){ 
             Element.src = "files/0.png"; 
             Turn = 1;
-            document.getElementById("text").innerHTML = "Player 'O' Turn";
+            Text.innerHTML = "Player 'O' Turn";
         }
         else{ 
             Element.src = "files/1.png";
             Turn = 0;
-            document.getElementById("text").innerHTML = "Player 'X' Turn";
+            Text.innerHTML = "Player 'X' Turn";
         }
         Sound = new Audio('files/click.mp3');
         Sound.play();
@@ -39,13 +40,13 @@ function Check_Winner(){
         }
     }
     if(Count == 9 && Play == true){ 
-        document.getElementById("text").innerHTML = "Tie"; 
+        Text.innerHTML = "Tie"; 
         Game_Over(0);
     }
 }
 
 function After_Win(Src){
-    Src.includes("0.png") ? document.getElementById("text").innerHTML = "Player 'X' Win" : document.getElementById("text").innerHTML = "Player 'O' Win";
+    Src.includes("0.png") ? Text.innerHTML = "Player 'X' Win" : Text.innerHTML = "Player 'O' Win";
     Play = false;
     Game_Over(1);
 }
